@@ -1,0 +1,15 @@
+# Skill Market bundle layer: one Host row that also serves the browser half.
+- insert:
+    - id: skill-market
+      name: '@local/dsh-skill-market'
+      config:
+        # 在 Web 设置页「技能市场」里添加的目录会写进下面的注册表文件；
+        # skillDirs 是部署级的只读补充目录（相对路径按进程工作目录解析）。
+        # skillDirs: []
+        maxDepth: 8
+        # 只向下扫：添加哪个目录就只扫哪个目录（含子目录）。这里保持 false，
+        # 插件就不会向上找「技能包」，也不会扫描注册目录以外的任何路径。
+        # 想在某个目录行上手动换成整包时，再把它改成 true，页面会出现
+        # 「改为添加技能包」按钮（仍然需要你自己点，不会自动替换）。
+        packDetection: false
+        watch: true
